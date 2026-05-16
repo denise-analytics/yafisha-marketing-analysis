@@ -1,38 +1,35 @@
-# 📊 Marketing Analytics & Unit Economics — Y.Afisha
+# 📊 Análise de Marketing e Unit Economics — Y.Afisha
 
-Projeto de análise exploratória desenvolvido com foco em métricas de marketing, comportamento de usuários e unit economics utilizando Python.
-
-Este projeto teve como objetivo analisar a eficiência dos canais de aquisição, o comportamento dos usuários ao longo do tempo e os principais indicadores de monetização do produto.
+Projeto de análise exploratória focado em métricas de marketing, comportamento de usuários e unit economics utilizando Python.
 
 ---
 
 # 🎯 Objetivo
 
-Investigar o comportamento dos usuários, analisar métricas de aquisição e avaliar a eficiência dos investimentos em marketing para identificar oportunidades de melhoria em retenção, monetização e retorno financeiro.
+Analisar o comportamento dos usuários, a conversão em vendas e a eficiência dos investimentos em marketing utilizando métricas de produto e unit economics.
 
 ---
 
-# 🔍 Etapas da Análise
+# 📂 Base de Dados
 
-Durante o projeto foram realizadas análises relacionadas a:
+O projeto utiliza dados da plataforma Y.Afisha contendo informações sobre:
 
-- atividade e comportamento dos usuários
-- retenção e análise de coortes
-- conversão até a primeira compra
-- receita e ticket médio
-- métricas de unit economics (LTV, CAC e ROI)
-- desempenho dos canais de aquisição
+- visitas dos usuários ao site
+- pedidos realizados
+- custos de marketing por fonte de aquisição
+
+Os dados analisados abrangem o período entre 2017 e 2018.
 
 ---
 
 # 📌 Principais Insights
 
-- A retenção de usuários diminui significativamente ao longo do tempo
-- Grande parte das conversões acontece no mesmo dia da primeira visita
-- O ticket médio das compras é relativamente baixo na maioria das transações
-- Parte relevante da receita está concentrada em poucos usuários de maior valor
-- Os canais de aquisição apresentam grande variação de desempenho
-- Nem todas as fontes de marketing apresentam ROI positivo
+- Retenção de usuários reduzida após os primeiros meses
+- Conversão concentrada nos primeiros dias após a visita
+- Ticket médio baixo na maior parte dos pedidos
+- Receita acumulada concentrada em poucos usuários
+- Diferenças significativas de desempenho entre canais de aquisição
+- Parte das fontes de marketing apresentou ROI negativo
 
 ---
 
@@ -41,8 +38,7 @@ Durante o projeto foram realizadas análises relacionadas a:
 - DAU (Usuários Ativos Diários)
 - WAU (Usuários Ativos Semanais)
 - MAU (Usuários Ativos Mensais)
-- Retenção de usuários
-- Conversão até a primeira compra
+- Retenção (Análise de Coorte)
 - CAC (Custo de Aquisição de Cliente)
 - LTV (Lifetime Value)
 - ROI (Retorno sobre Investimento)
@@ -62,63 +58,55 @@ Durante o projeto foram realizadas análises relacionadas a:
 # 📁 Estrutura do Projeto
 
 ```text
-├── data/          # Dados utilizados na análise
-├── notebooks/     # Notebook principal
+├── data/
+│   ├── visits.csv
+│   ├── orders.csv
+│   └── costs.csv
+│
+├── notebooks/
+│   └── marketing_analytics_yafisha.ipynb
+│
 ├── README.md
 └── .gitignore
 ```
 
 ---
 
-# 🔍 Desafios Encontrados
-
-Durante a análise, alguns pontos exigiram maior atenção, como:
-
-- padronização de colunas entre datasets
-- tratamento de valores extremos
-- construção das análises de coorte
-- interpretação das métricas de retenção e LTV
-- comparação da eficiência entre canais de aquisição
-
----
-
 # 📈 Resultados
 
-A análise mostrou que o produto possui boa capacidade de conversão inicial, porém enfrenta desafios relacionados à retenção e à geração de valor ao longo do tempo.
+Os resultados mostraram que a maior parte das conversões ocorre rapidamente após a primeira visita, porém a retenção de usuários diminui significativamente ao longo do tempo.
 
-Os dados também indicaram diferenças importantes entre os canais de aquisição, com algumas fontes apresentando retorno positivo e outras operando com baixa eficiência financeira.
+A análise também indicou diferenças relevantes entre os canais de aquisição, com algumas fontes apresentando CAC elevado e ROI negativo.
 
-Além disso, foi possível identificar oportunidades de otimização na distribuição do orçamento de marketing.
+Além disso, foi identificado que parte da receita está concentrada em poucos usuários de maior valor, enquanto a maior parte das transações possui ticket médio relativamente baixo.
 
 ---
 
 # 🚀 Recomendações
 
-- Priorizar investimentos em canais com ROI positivo
-- Reavaliar campanhas com baixo desempenho
-- Desenvolver estratégias para aumento de retenção
-- Trabalhar no aumento da recorrência de compras
-- Melhorar a eficiência da aquisição de usuários
+- Priorizar canais com maior ROI
+- Reduzir ou reavaliar investimentos em canais com desempenho negativo
+- Desenvolver estratégias para aumento de retenção de usuários
+- Trabalhar na elevação do ticket médio e da recorrência de compras
+- Otimizar a distribuição do orçamento de marketing
 
 ---
 
-# 📚 Aprendizados
+# 🧠 Técnicas Utilizadas
 
-Este projeto foi importante para praticar:
+Durante o desenvolvimento do projeto foram praticadas técnicas de:
 
-- limpeza e preparação de dados
+- limpeza e tratamento de dados
 - análise exploratória de dados (EDA)
 - análise de coortes
-- construção de métricas de negócio
-- visualização de dados
+- cálculo de métricas de negócio
+- construção de visualizações
 - interpretação estratégica de resultados
-
-Além do desenvolvimento técnico, o projeto também ajudou no fortalecimento do raciocínio analítico voltado para problemas de negócio.
 
 ---
 
 # 📌 Considerações Finais
 
-Os resultados indicam que o principal desafio do produto está na retenção de usuários e na eficiência dos investimentos em marketing.
+Os resultados indicam que o crescimento sustentável do negócio depende principalmente da melhoria da retenção de usuários e da otimização dos investimentos em aquisição.
 
-Com melhorias nos canais de aquisição e estratégias voltadas para retenção, existe espaço para aumentar o valor gerado pelos usuários ao longo do tempo.
+Com ajustes estratégicos nos canais de marketing e foco em retenção, há potencial significativo de aumento da rentabilidade do negócio.
