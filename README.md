@@ -1,112 +1,233 @@
-# 📊 Análise de Marketing e Unit Economics — Y.Afisha
+# Análise de Marketing e Unit Economics — Y.Afisha
 
-Projeto de análise exploratória focado em métricas de marketing, comportamento de usuários e unit economics utilizando Python.
+## Visão geral
 
----
+Este projeto analisa o comportamento dos usuários, as vendas e a eficiência dos investimentos em marketing da plataforma Y.Afisha.
 
-# 🎯 Objetivo
+O estudo combina métricas de produto, análise de coortes e indicadores financeiros para identificar como os usuários interagem com a plataforma, quanto tempo levam para realizar a primeira compra e quais canais de aquisição geram melhor retorno.
 
-Analisar o comportamento dos usuários, a conversão em vendas e a eficiência dos investimentos em marketing utilizando métricas de produto e unit economics.
+## Objetivos
 
----
+- Avaliar o nível de atividade e engajamento dos usuários.
+- Analisar a duração e a frequência das sessões.
+- Medir a retenção por coortes.
+- Identificar o tempo necessário para a primeira compra.
+- Avaliar a recorrência e o valor dos pedidos.
+- Calcular o Lifetime Value (LTV).
+- Comparar o custo de aquisição de clientes entre as fontes.
+- Avaliar o retorno dos investimentos em marketing.
+- Recomendar melhorias na distribuição do orçamento.
 
-# 📂 Base de Dados
+## Dados analisados
 
-O projeto utiliza dados da plataforma Y.Afisha contendo informações sobre:
+O projeto utiliza três conjuntos de dados:
 
-- visitas dos usuários ao site
-- pedidos realizados
-- custos de marketing por fonte de aquisição
+| Arquivo | Conteúdo |
+|---|---|
+| `visits_log_us.csv` | Visitas, usuários, origem do tráfego, dispositivo e duração das sessões |
+| `orders_log_us.csv` | Pedidos, compradores, datas e valores das transações |
+| `costs_us.csv` | Investimentos diários por fonte de aquisição |
 
-Os dados analisados abrangem o período entre 2017 e 2018.
+Os dados abrangem o período entre 2017 e 2018.
 
----
+## Metodologia
 
-# 📌 Principais Insights
+A análise foi organizada em três áreas.
 
-- Retenção de usuários reduzida após os primeiros meses
-- Conversão concentrada nos primeiros dias após a visita
-- Ticket médio baixo na maior parte dos pedidos
-- Receita acumulada concentrada em poucos usuários
-- Diferenças significativas de desempenho entre canais de aquisição
-- Parte das fontes de marketing apresentou ROI negativo
+### Produto
 
----
+Foram calculadas métricas de atividade e engajamento:
 
-# 📊 Métricas Analisadas
+- DAU — usuários ativos diariamente;
+- WAU — usuários ativos semanalmente;
+- MAU — usuários ativos mensalmente;
+- sessões por dia;
+- duração das sessões;
+- quantidade de sessões por usuário;
+- retenção por coortes.
 
-- DAU (Usuários Ativos Diários)
-- WAU (Usuários Ativos Semanais)
-- MAU (Usuários Ativos Mensais)
-- Retenção (Análise de Coorte)
-- CAC (Custo de Aquisição de Cliente)
-- LTV (Lifetime Value)
-- ROI (Retorno sobre Investimento)
+### Vendas
 
----
+Foram analisados:
 
-# 🛠️ Ferramentas Utilizadas
+- tempo entre a primeira visita e a primeira compra;
+- pedidos por usuário;
+- receita por pedido;
+- comportamento das coortes;
+- Lifetime Value (LTV).
+
+### Marketing
+
+Foram avaliados:
+
+- investimentos por fonte;
+- custo de aquisição de clientes (CAC);
+- retorno sobre o investimento;
+- retorno acumulado por coorte;
+- diferenças de desempenho entre os canais.
+
+## Principais resultados
+
+| Indicador | Resultado |
+|---|---:|
+| Mediana da duração das sessões | 5 minutos |
+| Sessões com duração de até 14 minutos | 75% |
+| Retenção média no mês seguinte | Aproximadamente 6,5% |
+| Mediana até a primeira compra | 0 dias |
+| Usuários que compraram em até 2 dias | 75% |
+| Mediana da receita por pedido | Aproximadamente 2,5 |
+| CAC médio geral | Aproximadamente 8 |
+| Menor CAC | Fonte 9 — aproximadamente 4,87 |
+| Maior CAC | Fonte 3 — aproximadamente 13,80 |
+
+## Comportamento dos usuários
+
+A atividade da plataforma cresceu durante o período analisado, com aumento das métricas DAU, WAU e MAU.
+
+Entretanto, a maior parte dos usuários realizou apenas uma sessão. A mediana da duração foi de **5 minutos**, e 75% das sessões duraram até **14 minutos**.
+
+A diferença entre usuários ativos diariamente, semanalmente e mensalmente indica que apenas uma parcela da base retorna com frequência.
+
+## Retenção
+
+A retenção apresentou uma queda acentuada após o primeiro mês.
+
+Em média, aproximadamente **6,5% dos usuários retornaram no mês seguinte à aquisição**. Nos períodos posteriores, os percentuais permaneceram geralmente entre 2% e 5%.
+
+Esse comportamento indica que a plataforma consegue atrair usuários, mas enfrenta dificuldades para mantê-los ativos e estimular compras recorrentes.
+
+## Conversão e vendas
+
+A conversão ocorreu principalmente nos primeiros contatos com a plataforma:
+
+- a mediana até a primeira compra foi de **0 dias**;
+- pelo menos metade dos compradores realizou a compra no mesmo dia da primeira visita;
+- 75% converteram em até **2 dias**.
+
+A receita por pedido apresentou distribuição assimétrica. A mediana ficou próxima de **2,5**, enquanto poucos pedidos de maior valor elevaram a média.
+
+Os resultados mostram boa capacidade de conversão inicial, mas baixa recorrência de compras nos períodos seguintes.
+
+## Lifetime Value
+
+O LTV médio cresceu ao longo do ciclo de vida dos clientes, passando de aproximadamente **4,8 no mês inicial** para valores superiores a **10 nas coortes mais maduras**.
+
+O crescimento foi mais intenso nos primeiros meses e desacelerou posteriormente. A diferença entre média e mediana indica que poucos usuários de maior valor elevam o resultado agregado.
+
+O aumento sustentável do LTV depende principalmente da melhoria da retenção e da recorrência de compras.
+
+## Custo de aquisição
+
+O CAC apresentou diferenças importantes entre os canais:
+
+| Fonte | CAC aproximado | Avaliação |
+|---|---:|---|
+| 9 | 4,87 | Menor custo |
+| 10 | 5,41 | Baixo custo |
+| 2 | 12,50 | Custo elevado |
+| 3 | 13,80 | Maior custo |
+
+A fonte 7 não apresentou CAC calculável porque não houve clientes convertidos registrados nessa origem.
+
+O CAC não deve ser analisado isoladamente. Canais de menor custo precisam também gerar receita e retenção suficientes para justificar o investimento.
+
+## Retorno dos investimentos
+
+A fonte 1 apresentou o melhor retorno sobre o investimento.
+
+As fontes 2, 5 e 9 operaram próximas ao ponto de equilíbrio, enquanto as fontes 3, 4 e 10 apresentaram retorno negativo no período analisado.
+
+Nos primeiros meses após a aquisição, o retorno de marketing permaneceu predominantemente negativo. A recuperação ocorreu gradualmente e dependeu do valor acumulado pelos clientes ao longo do tempo.
+
+A fonte 10 representa um exemplo importante: apesar de apresentar um dos menores custos de aquisição, seu retorno foi negativo. Isso demonstra que um CAC baixo não garante rentabilidade e reforça a necessidade de avaliar CAC, LTV e retorno de forma conjunta.
+
+Esse resultado reforça que investir apenas em aquisição, sem melhorar retenção e monetização, pode comprometer a sustentabilidade do crescimento.
+
+## Recomendações de negócio
+
+- Priorizar canais que combinem CAC competitivo e retorno positivo.
+- Reavaliar os investimentos nas fontes 3, 4 e 10.
+- Investigar os fatores responsáveis pelo desempenho da fonte 1.
+- Desenvolver estratégias de retenção após a primeira compra.
+- Estimular recorrência por meio de campanhas segmentadas.
+- Trabalhar no aumento do valor médio dos pedidos.
+- Monitorar CAC, LTV e retorno de forma conjunta.
+- Revisar periodicamente a distribuição do orçamento entre as fontes.
+
+## Limitações
+
+- Os dados representam um período específico entre 2017 e 2018.
+- A análise identifica associações, mas não comprova causalidade.
+- As fontes são representadas por identificadores numéricos, sem descrição dos canais.
+- Não estão disponíveis informações sobre margem de lucro, categoria dos produtos ou perfil demográfico.
+- Algumas coortes possuem períodos de observação menores que outras.
+- A concentração de receita em poucos usuários pode influenciar médias e indicadores agregados.
+
+## Tecnologias utilizadas
 
 - Python
 - Pandas
 - NumPy
 - Matplotlib
 - Seaborn
+- Jupyter Notebook
 
----
-
-# 📁 Estrutura do Projeto
+## Estrutura do repositório
 
 ```text
+yafisha-marketing-analysis/
 ├── data/
-│   ├── visits.csv
-│   ├── orders.csv
-│   └── costs.csv
-│
+│   ├── costs_us.csv
+│   ├── orders_log_us.csv
+│   └── visits_log_us.csv
 ├── notebooks/
 │   └── marketing_analytics_yafisha.ipynb
-│
+├── .gitignore
 ├── README.md
-└── .gitignore
+└── requirements.txt
 ```
 
----
+## Como executar o projeto
 
-# 📈 Resultados
+1. Clone o repositório:
 
-Os resultados mostraram que a maior parte das conversões ocorre rapidamente após a primeira visita, porém a retenção de usuários diminui significativamente ao longo do tempo.
+```bash
+git clone https://github.com/denise-analytics/yafisha-marketing-analysis.git
+```
 
-A análise também indicou diferenças relevantes entre os canais de aquisição, com algumas fontes apresentando CAC elevado e ROI negativo.
+2. Acesse a pasta:
 
-Além disso, foi identificado que parte da receita está concentrada em poucos usuários de maior valor, enquanto a maior parte das transações possui ticket médio relativamente baixo.
+```bash
+cd yafisha-marketing-analysis
+```
 
----
+3. Instale as dependências:
 
-# 🚀 Recomendações
+```bash
+pip install -r requirements.txt
+```
 
-- Priorizar canais com maior ROI
-- Reduzir ou reavaliar investimentos em canais com desempenho negativo
-- Desenvolver estratégias para aumento de retenção de usuários
-- Trabalhar na elevação do ticket médio e da recorrência de compras
-- Otimizar a distribuição do orçamento de marketing
+4. Entre na pasta do notebook:
 
----
+```bash
+cd notebooks
+```
 
-# 🧠 Técnicas Utilizadas
+5. Inicie o Jupyter Notebook:
 
-Durante o desenvolvimento do projeto foram praticadas técnicas de:
+```bash
+jupyter notebook
+```
 
-- limpeza e tratamento de dados
-- análise exploratória de dados (EDA)
-- análise de coortes
-- cálculo de métricas de negócio
-- construção de visualizações
-- interpretação estratégica de resultados
+Abra `marketing_analytics_yafisha.ipynb` e execute as células na ordem apresentada.
 
----
+## Notebook
 
-# 📌 Considerações Finais
+A análise completa, incluindo métricas de produto, coortes, LTV, CAC e retorno dos investimentos, está disponível em:
 
-Os resultados indicam que o crescimento sustentável do negócio depende principalmente da melhoria da retenção de usuários e da otimização dos investimentos em aquisição.
+[Análise completa em Jupyter Notebook](notebooks/marketing_analytics_yafisha.ipynb)
 
-Com ajustes estratégicos nos canais de marketing e foco em retenção, há potencial significativo de aumento da rentabilidade do negócio.
+## Autora
+
+**Denise Duarte**  
+Analista de Dados Júnior | Python | SQL | Excel | Power BI
